@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {Link } from 'react-router-dom';
+import RouteIndex from '../router/router'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import styles from './index.less'
 const { Header, Content, Footer, Sider } = Layout;
@@ -24,11 +26,11 @@ class inlineApp extends React.Component {
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <Icon type="pie-chart" />
-              <span>Option 1</span>
+              <span><Link to='/app' >App</Link></span>
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="desktop" />
-              <span>Option 2</span>
+              <span><Link to='/ticktoe' >TickToe</Link></span>
             </Menu.Item>
             <SubMenu
               key="sub1"
@@ -59,7 +61,7 @@ class inlineApp extends React.Component {
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 860 }}>
-              Bill is a cat.
+              <RouteIndex />
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>

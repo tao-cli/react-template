@@ -8,8 +8,6 @@ const paths = require('./paths');
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
 
-const apiMocker = require('webpack-api-mocker');
-const mocker = require.resolve("./mocker");
 module.exports = function(proxy, allowedHost) {
   return {
     // WebpackDevServer 2.4.3 introduced a security fix that prevents remote
