@@ -1,4 +1,6 @@
 import React from "react";
+import {Link } from 'react-router-dom';
+import RouteIndex from '../router/router'
 import { Layout, Menu, Breadcrumb, Icon } from "antd";
 import styles from "./index.less";
 const { Header, Content, Footer, Sider } = Layout;
@@ -22,7 +24,7 @@ class horizonApp extends React.Component {
             defaultSelectedKeys={defaultKey}
             style={{ lineHeight: "64px" }}
           >
-            <Menu.Item key="1">nav 1</Menu.Item>
+            <Menu.Item key="1"><Link to='/app' >App</Link></Menu.Item>
             <Menu.Item key="2">nav 2</Menu.Item>
             <Menu.Item key="3">nav 3</Menu.Item>
           </Menu>
@@ -34,7 +36,7 @@ class horizonApp extends React.Component {
             <Breadcrumb.Item>App</Breadcrumb.Item>
           </Breadcrumb>
           <div style={{ background: "#fff", padding: 24, minHeight: 800 }}>
-            Content
+            <RouteIndex />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
