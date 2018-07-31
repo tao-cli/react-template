@@ -1,4 +1,4 @@
-# 企业管理后台
+# 前端脚手架
 
 > 项目基于[create-react-app](https://github.com/facebook/create-react-app)项目
 
@@ -9,7 +9,7 @@
 <span style="color: rgb(184,49,47);">点击名称可跳转相关网站😄😄</span>
 
 - [react@15.5.0](https://facebook.github.io/react/)
-- [react-router@3.0.2](https://react-guide.github.io/react-router-cn/)(<span style="color: rgb(243,121,52);">react路由,4.x的差异还是比较大，暂时还是3.x的版本</span>)
+- [react-router-dom@4.3.1](https://react-guide.github.io/react-router-cn/)(<span style="color: rgb(243,121,52);">react路由组件</span>)
 - [antd@3.6.2](https://ant.design/index-cn)(<span style="color: rgb(243,121,52);">蚂蚁金服开源的react ui组件框架</span>)
 - [axios@0.16.1](https://github.com/mzabriskie/axios)(<span style="color: rgb(243,121,52);">http请求模块，可用于前端任何场景，很强大👍</span>)
 - [echarts-for-react@1.2.0](https://github.com/hustcc/echarts-for-react)(<span style="color: rgb(243,121,52);">可视化图表，别人基于react对echarts的封装，足够用了</span>)
@@ -25,13 +25,10 @@
 ### 功能模块
 <!--more-->
 
-- 企业管理
-    - 基本信息
-    - 人才信息
-    - 住宿信息
-- 数据直报
-- 账单明细
-- 报修反馈
+- 水平布局
+- 垂直布局
+- 工具库
+- 通用组件库
 
 ### 代码目录
 ```js
@@ -42,39 +39,28 @@
 |   --- favicon.ico							---网页图标
 |   --- manifest.json						---项目基本信息
 +-- scripts/                                 
-|   --- index.html							---首页入口html文件
-|   --- favicon.ico							---网页图标
-|   --- manifest.json						---项目基本信息
+|   --- build.js							---打包命令文件
+|   --- start.js							---项目启动命令文件
+|   --- test.js						        ---项目测试命令文件
++-- mock/                                   ---mock配置文件
+|   --- db.js                               ---mock数据文件
+|   --- routes.js                           ---api路径映射文件
+|   --- server.js                           ---json-serve配置文件(默认不修改)
 +-- src/                                    ---核心代码目录
-|   +-- axios                               ---http请求存放目录
-|   |    --- tools.js
-|   +-- components                          ---业务组件存放目录
-|   |    +-- business                       ---企业信息组件
+|   +-- tools                               ---工具文件
+|   |    --- axios.js                       ---axios封装
+|   +-- modules                             ---业务组件存放目录
+|   |    +-- app                            ---组件入口
 |   |    |    --- ...   
-|   |    +-- check                          ---图表组件
+|   |    +-- horizonGrid                    ---水平模式组件
 |   |    |    --- ...   
-|   |    +-- maintain                       ---首页组件
+|   |    +-- inlineGrid                     ---垂直模式组件
 |   |    |    --- ...   
-|   |    +-- modules                        ---公共组件
+|   |    +-- router                         ---路由组件
 |   |    |    --- ...   
-|   |    +-- pages                          ---页面组件
+|   |    +-- ...                            ---其余业务组件
 |   |    |    --- ...  
-|   |    +-- report                         ---表格组件
-|   |    |    --- ...   
-|   |    --- BreadcrumbCustom.jsx           ---面包屑组件
-|   |    --- HeaderCustom.jsx               ---顶部导航组件
-|   |    --- Page.jsx                       ---页面容器
-|   |    --- SiderCustom.jsx                ---左边菜单组件
-|   +-- constants                           ---目录路由文件
-|   |   --- menus.js
-|   +-- mock                                ---mock数据信息
-|   |   --- ...
-|   +-- routes                              ---路由配置信息
-|   |   --- ...
-|   --- App.js                              ---组件入口文件
 |   --- index.js                            ---项目的整体js入口文件，包括路由配置等
---- .env                                    ---启动项目自定义端口配置文件
---- .eslintrc                               ---自定义eslint配置文件，包括增加的react jsx语法限制
 --- package.json                                    
 ```
 ### 安装运行
@@ -87,6 +73,8 @@ npm i
 ```js
 npm start
 ```
+> mock服务在启动start命令后重开bash窗口运行`npm run mock`即可
+
 ##### 4.打包项目
 ```js
 npm run build
