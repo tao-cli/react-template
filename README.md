@@ -9,7 +9,7 @@
 <span style="color: rgb(184,49,47);">点击名称可跳转相关网站😄😄</span>
 
 - [react@15.5.0](https://facebook.github.io/react/)
-- [react-router@3.0.2](https://react-guide.github.io/react-router-cn/)(<span style="color: rgb(243,121,52);">react路由,4.x的差异还是比较大，暂时还是3.x的版本</span>)
+- [react-router-dom@4.3.1](https://react-guide.github.io/react-router-cn/)(<span style="color: rgb(243,121,52);">react路由组件</span>)
 - [antd@3.6.2](https://ant.design/index-cn)(<span style="color: rgb(243,121,52);">蚂蚁金服开源的react ui组件框架</span>)
 - [axios@0.16.1](https://github.com/mzabriskie/axios)(<span style="color: rgb(243,121,52);">http请求模块，可用于前端任何场景，很强大👍</span>)
 - [echarts-for-react@1.2.0](https://github.com/hustcc/echarts-for-react)(<span style="color: rgb(243,121,52);">可视化图表，别人基于react对echarts的封装，足够用了</span>)
