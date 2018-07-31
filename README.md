@@ -8,10 +8,10 @@
 
 <span style="color: rgb(184,49,47);">点击名称可跳转相关网站😄😄</span>
 
-- [react@15.5.0](https://facebook.github.io/react/)
+- [react@16.4.0](https://facebook.github.io/react/)
 - [react-router-dom@4.3.1](https://react-guide.github.io/react-router-cn/)(<span style="color: rgb(243,121,52);">react路由组件</span>)
 - [antd@3.6.2](https://ant.design/index-cn)(<span style="color: rgb(243,121,52);">蚂蚁金服开源的react ui组件框架</span>)
-- [axios@0.16.1](https://github.com/mzabriskie/axios)(<span style="color: rgb(243,121,52);">http请求模块，可用于前端任何场景，很强大👍</span>)
+- [axios@0.18.0](https://github.com/mzabriskie/axios)(<span style="color: rgb(243,121,52);">http请求模块，可用于前端任何场景，很强大👍</span>)
 - [echarts-for-react@1.2.0](https://github.com/hustcc/echarts-for-react)(<span style="color: rgb(243,121,52);">可视化图表，别人基于react对echarts的封装，足够用了</span>)
 - [recharts@0.22.3](http://recharts.org/#/zh-CN/)(<span style="color: rgb(243,121,52);">另一个基于react封装的图表，个人觉得是没有echarts好用</span>)
 - [nprogress@0.2.0](https://github.com/rstacruz/nprogress)(<span style="color: rgb(243,121,52);">顶部加载条，蛮好用👍</span>)
