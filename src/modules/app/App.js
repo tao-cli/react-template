@@ -9,6 +9,7 @@ import HorizonApp from "../horizonGrid";
 import InlineApp from "../inlineGrid";
 import styles from './App.less';
 import {get} from '@/tools/axios';
+import API from '@/tools/api';
 moment.locale("zh-cn");
 const RadioGroup = Radio.Group;
 
@@ -23,7 +24,8 @@ class App extends React.Component {
     console.log(`switch to ${checked}`);
   }
   onRadioChange=(e)=>{
-    get({url:"/comment/get/3"}).then((res)=>{
+    let url = API.GET_COMMENT.replace(':id',3);
+    get({url,params:{name:'geg'}}).then((res)=>{
       console.log(res)
     }).catch=(err)=>{
       console.log('==error==',err)
