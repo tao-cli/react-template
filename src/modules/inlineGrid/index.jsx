@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import RouteIndex from '../router/router'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import styles from './index.less'
@@ -25,12 +25,15 @@ class inlineApp extends React.Component {
           <div className={styles.logo} />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
-              <Icon type="pie-chart" />
-              <span><Link to='/app' >App</Link></span>
+              <Link to='/app' >
+                <Icon type="pie-chart" />
+                <span>App</span></Link>
             </Menu.Item>
             <Menu.Item key="2">
-              <Icon type="desktop" />
-              <span><Link to='/ticktoe' >TickToe</Link></span>
+              <Link to='/ticktoe' >
+                <Icon type="desktop" />
+                <span>TickToe</span>
+              </Link>
             </Menu.Item>
             <SubMenu
               key="sub1"

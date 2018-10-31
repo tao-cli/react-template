@@ -2,7 +2,7 @@ import {Switch, Route, Link } from 'react-router-dom';
 import React from "react";
 import { render } from "react-dom";
 
-import Home from '../../App';
+import Home from "../home/index";
 import TickToe from '../tickToe/containers/TickToe';
 class RouterIndex extends React.Component{
     render(){

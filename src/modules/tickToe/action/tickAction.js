@@ -3,4 +3,4 @@ const iActions = {
         return {type: "INCREASE",time};
     }
 }
-export default iActions;
+export default iActions;                                                  
