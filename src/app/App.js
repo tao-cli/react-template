@@ -5,8 +5,9 @@ import { LocaleProvider,Affix,Popover,Icon,Radio} from "antd";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
-import HorizonApp from "../horizonGrid";
-import InlineApp from "../inlineGrid";
+import HorizonApp from "@/modules/horizonGrid";
+import InlineApp from "@/modules/inlineGrid";
+
 import styles from './App.less';
 import {get} from '@/tools/axios';
 import API from '@/tools/api';
