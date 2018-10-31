@@ -51,9 +51,11 @@
 |   |    --- **.jsx                         ---axios封装
 |   +-- tools                               ---工具文件
 |   |    --- axios.js                       ---axios封装
+|   +-- app                                 ---组件入口
+|   |    --- ...   
+|   +-- redux                               ---redux配置
+|   |    --- reducer.js   
 |   +-- modules                             ---业务组件存放目录
-|   |    +-- app                            ---组件入口
-|   |    |    --- ...   
 |   |    +-- horizonGrid                    ---水平模式组件
 |   |    |    --- ...   
 |   |    +-- inlineGrid                     ---垂直模式组件
