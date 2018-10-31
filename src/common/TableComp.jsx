@@ -44,7 +44,7 @@ class TableCompnent extends Component{
             showTotal:this.showTotal,onChange:this.pageChange,
             onShowSizeChange:this.sizeChange,total:total||list.length
         }
-        return <Table loading={loading} pagination={pageProps} columns={columns} dataSource={list||[]} rowKey={rowKey} />
+        return <Table loading={loading} pagination={pageProps} columns={columns} dataSource={list||[]} rowKey={rowKey||'key'} />
     }
 }
 TableCompnent.propTypes = {

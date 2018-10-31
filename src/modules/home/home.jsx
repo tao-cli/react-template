@@ -32,7 +32,7 @@ const Schedule = () => (
       <li>6/8 vs Kickers</li>
       <li>6/14 @ United</li>
     </ul>
-    <CommTab list={dataSource} columns={columns} />
+    <CommTab list={dataSource} columns={columns} rowKey='key' />
   </div>
 );
 export default Schedule;

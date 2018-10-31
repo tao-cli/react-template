@@ -27,7 +27,7 @@ const columns = [{
 }];
 const Table = () => (
   <div>
-    <CommTab list={dataSource} columns={columns} />
+    <CommTab list={dataSource} columns={columns} rowKey='key'/>
   </div>
 );
 export default Table;
