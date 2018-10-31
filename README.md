@@ -47,7 +47,6 @@
 |   --- routes.js                           ---api路径映射文件
 |   --- server.js                           ---json-serve配置文件(默认不修改)
 +-- src/                                    ---核心代码目录
-<<<<<<< HEAD
 |   +-- app                                 ---组件入口
 |   |    --- ...   
 |   +-- common                              ---公共组件
