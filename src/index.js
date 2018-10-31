@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 
 import { Provider } from 'react-redux';
 import './index.css';
-import App from './App';
+import App from '@/app/App';
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(reducers, compose(

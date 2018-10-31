@@ -5,10 +5,12 @@ import { LocaleProvider,Affix,Popover,Icon,Radio} from "antd";
 import zhCN from "antd/lib/locale-provider/zh_CN";
 import moment from "moment";
 import "moment/locale/zh-cn";
-import HorizonApp from "./modules/horizonGrid";
-import InlineApp from "./modules/inlineGrid";
+import HorizonApp from "@/modules/horizonGrid";
+import InlineApp from "@/modules/inlineGrid";
 import styles from './App.less';
-import {get} from './axios.js';
+import {get} from '@/tools/axios.js';
+import API from '@/tools/api';
+
 moment.locale("zh-cn");
 const RadioGroup = Radio.Group;
 
@@ -23,7 +25,8 @@ class App extends React.Component {
     console.log(`switch to ${checked}`);
   }
   onRadioChange=(e)=>{
-    get({url:"/comment/get/3"}).then((res)=>{
+    let url = API.GET_COMMENT.replace(':id',3);
+    get({url}).then((res)=>{
       console.log(res)
     }).catch=(err)=>{
       console.log('==error==',err)
