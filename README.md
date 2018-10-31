@@ -47,6 +47,8 @@
 |   --- routes.js                           ---api路径映射文件
 |   --- server.js                           ---json-serve配置文件(默认不修改)
 +-- src/                                    ---核心代码目录
+|   +-- common                              ---公共组件
+|   |    --- **.jsx                         ---axios封装
 |   +-- tools                               ---工具文件
 |   |    --- axios.js                       ---axios封装
 |   +-- modules                             ---业务组件存放目录
@@ -71,9 +73,8 @@ npm i
 ```
 ##### 3.启动项目
 ```js
-npm start
+npm run dev
 ```
-> mock服务在启动start命令后重开bash窗口运行`npm run mock`即可
 
 ##### 4.打包项目
 ```js
