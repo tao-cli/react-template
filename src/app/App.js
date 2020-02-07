@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { LocaleProvider,Affix,Popover,Icon,Radio} from "antd";
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
 import zhCN from "antd/lib/locale-provider/zh_CN";
@@ -7,10 +6,10 @@ import moment from "moment";
 import "moment/locale/zh-cn";
 import HorizonApp from "@/modules/horizonGrid";
 import InlineApp from "@/modules/inlineGrid";
-
 import styles from './App.less';
-import {get} from '@/tools/axios';
+import {get} from '@/tools/axios.js';
 import API from '@/tools/api';
+
 moment.locale("zh-cn");
 const RadioGroup = Radio.Group;
 
@@ -26,7 +25,7 @@ class App extends React.Component {
   }
   onRadioChange=(e)=>{
     let url = API.GET_COMMENT.replace(':id',3);
-    get({url,params:{name:'geg'}}).then((res)=>{
+    get({url}).then((res)=>{
       console.log(res)
     }).catch=(err)=>{
       console.log('==error==',err)

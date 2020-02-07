@@ -1,16 +1,14 @@
-import {Switch, Route, Link } from 'react-router-dom';
+import {Switch, Route, } from 'react-router-dom';
 import React from "react";
-import { render } from "react-dom";
 
-import Home from "../home/home";
-import Table from "../table/table";
-
+import Home from "../home/index";
+import TickToe from '../tickToe/containers/TickToe';
 class RouterIndex extends React.Component{
     render(){
         return <Switch>
             <Route exact path="/" component={Home}/>
             <Route path="/app" component={Home}/>
-            <Route path="/tab" component={Table}/>
+            <Route path="/ticktoe" component={TickToe}/>
         </Switch>
     }
 }

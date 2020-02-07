@@ -17,8 +17,7 @@ axiosIns.interceptors.request.use(
 // 添加响应拦截器
 axiosIns.interceptors.response.use(
   function(response) {
-    let status = response.status,
-      header = response.headers;
+    let status = response.status;
     if (status === 404) {
       window.location.href = '#/404';
     }
