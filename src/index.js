@@ -3,7 +3,7 @@ import 'raf/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reducers from './redux/reducer';
-import { BrowserRouter,Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 

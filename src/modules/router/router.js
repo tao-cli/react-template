@@ -1,6 +1,5 @@
-import {Switch, Route, Link } from 'react-router-dom';
+import {Switch, Route, } from 'react-router-dom';
 import React from "react";
-import { render } from "react-dom";
 
 import Home from "../home/index";
 import TickToe from '../tickToe/containers/TickToe';

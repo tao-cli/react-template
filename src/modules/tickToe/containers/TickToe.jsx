@@ -1,15 +1,15 @@
 import React from "react";
 import Game from "../Game";
-import './tick.css';
-import {connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-import TickAction from '../action/tickAction';
+import "./tick.css";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import TickAction from "../action/tickAction";
 class TickToe extends React.Component {
-  handleClick=()=>{
+  handleClick = () => {
     this.props.actions.increaseAction(new Date());
-  }
+  };
   render() {
-    const { tickState, actions } = this.props;
+    const { tickState } = this.props;
     return (
       <div>
         <Game />
@@ -19,22 +19,18 @@ class TickToe extends React.Component {
     );
   }
 }
-const mapStateToProps=function(state) {
+const mapStateToProps = function(state) {
   return {
     tickState: state.tickState
-  }
-}
+  };
+};
 
-const mapDispatchToProps=(dispatch)=> {
+const mapDispatchToProps = dispatch => {
   return {
-    actions:bindActionCreators(TickAction, dispatch)
-  }
-}
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TickToe);
-
+    actions: bindActionCreators(TickAction, dispatch)
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(TickToe);
 
 // window.addEventListener('mousedown', function(e) {
 //   document.body.classList.add('mouse-navigation');

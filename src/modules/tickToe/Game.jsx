@@ -49,7 +49,7 @@ class Game extends React.Component {
         {
           squares: squares,
           lastStep:
-            squares[i] + " moves to " + "(" + xIndex + "," + yIndex + ")"
+            squares[i] + " moves to (" + xIndex + "," + yIndex + ")"
         }
       ]),
       stepNumber: history.length,

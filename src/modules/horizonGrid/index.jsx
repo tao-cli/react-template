@@ -1,12 +1,11 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb, Icon } from "antd";
+import { Layout, Menu, Breadcrumb } from "antd";
 import {Link } from 'react-router-dom';
 
 import styles from "./index.less";
 import RouteIndex from '../router/router'
 
-const { Header, Content, Footer, Sider } = Layout;
-const SubMenu = Menu.SubMenu;
+const { Header, Content, Footer } = Layout;
 class horizonApp extends React.Component {
   constructor(props) {
     super(props);

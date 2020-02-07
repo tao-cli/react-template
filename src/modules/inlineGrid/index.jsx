@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Link } from 'react-router-dom';
 import RouteIndex from '../router/router'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
