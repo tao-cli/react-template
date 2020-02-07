@@ -1,4 +1,4 @@
-'use strict';
+
 
 const autoprefixer = require('autoprefixer');
 const path = require('path');
@@ -12,6 +12,7 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const antdTheme = require("./theme");
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -148,11 +149,91 @@ module.exports = {
           {
             test: /\.(js|jsx|mjs)$/,
             include: paths.appSrc,
-            loader: require.resolve('babel-loader'),
+            loader: require.resolve("babel-loader"),
             options: {
-              
-              compact: true,
-            },
+              // 添加 antd 按需加载文件处理插件
+              plugins: [
+                // 引入样式为 css
+                // ['import', { libraryName: 'antd', style: 'css' }],
+                // 引入样式为 less
+                ["import", { libraryName: "antd", style: true }]
+              ],
+              // This is a feature of `babel-loader` for webpack (not Babel itself).
+              // It enables caching results in ./node_modules/.cache/babel-loader/
+              // directory for faster rebuilds.
+              cacheDirectory: true
+            }
+          },
+          {
+            test: /\.less$/,
+            exclude: /node_modules|antd\.css/,
+            use: [
+              require.resolve("style-loader"),
+              ({ resource }) => ({
+                loader: "css-loader",
+                options: {
+                  importLoaders: 1,
+                  modules: true
+                }
+              }),
+              {
+                loader: require.resolve("postcss-loader"),
+                options: {
+                  ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
+                  plugins: () => [
+                    require("postcss-flexbugs-fixes"),
+                    autoprefixer({
+                      browsers: [
+                        ">1%",
+                        "last 4 versions",
+                        "Firefox ESR",
+                        "not ie < 9" // React doesn't support IE8 anyway
+                      ],
+                      flexbox: "no-2009"
+                    })
+                  ]
+                }
+              },
+              {
+                loader: require.resolve("less-loader")
+              }
+            ]
+          },
+          {
+            test: /\.less$/,
+            use: [
+              require.resolve("style-loader"),
+              ({ resource }) => ({
+                loader: "css-loader",
+                options: {
+                  importLoaders: 1,
+                }
+              }),
+              {
+                loader: require.resolve("postcss-loader"),
+                options: {
+                  ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
+                  plugins: () => [
+                    require("postcss-flexbugs-fixes"),
+                    autoprefixer({
+                      browsers: [
+                        ">1%",
+                        "last 4 versions",
+                        "Firefox ESR",
+                        "not ie < 9" // React doesn't support IE8 anyway
+                      ],
+                      flexbox: "no-2009"
+                    })
+                  ]
+                }
+              },
+              {
+                loader: require.resolve("less-loader"),
+                options: {
+                  modifyVars: antdTheme
+                }
+              }
+            ]
           },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
